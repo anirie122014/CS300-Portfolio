@@ -156,16 +156,82 @@ void loadCourses(string fileName, BinarySearchTree& bst) {
 }
 
 int main() {  //prompt user for file name, loads course data and prints all
+        BinarySearchTree bst;
+        string fileName;
+        int choice = 0;
+        bool dataLoaded = false;
 
-    BinarySearchTree bst;
-    string fileName;
+        while (choice != 9) {
+            cout << "\nMenu:" << endl;
+            cout << "  1. Load Data Structure" << endl;
+            cout << "  2. Print Course List" << endl;
+            cout << "  3. Print Course" << endl;
+            cout << "  9. Exit" << endl;
+            cout << "What would you like to do? ";
+            cin >> choice;
 
-    cout << "Enter file name (include .csv): ";
-    getline(cin >> ws, fileName);
+            if (choice == 1) {
+                if (dataLoaded) {
+                    cout << "Data has already been loaded." << endl;
+                }
+                else {
+                    cout << "Enter file name: ";
+                    cin >> ws;
+                    getline(cin, fileName);
 
-    loadCourses(fileName, bst);
+                    loadCourses(fileName, bst);
+                    dataLoaded = true;
+                }
+            }
+            else if (choice == 2) {
+                if (!dataLoaded) {
+                    cout << "Please load the data file first." << endl;
+                }
+                else {
+                    cout << "\nCourse List:" << endl;
+                    bst.PrintAllCourses();
+                }
+            }
+            else if (choice == 3) {
+                if (!dataLoaded) {
+                    cout << "Please load the data file first." << endl;
+                }
+                else {
+                    string courseNumber;
+                    cout << "What course do you want to know about? ";
+                    cin >> courseNumber;
 
-    bst.PrintAllCourses();
+                    Course course = bst.Search(courseNumber);
 
-    return 0;
-}
+                    if (course.courseNumber == "") {
+                        cout << "Course not found." << endl;
+                    }
+                    else {
+                        cout << course.courseNumber << ", " << course.courseTitle << endl;
+
+                        cout << "Prerequisites: ";
+                        if (course.prerequisites.size() == 0) {
+                            cout << "None";
+                        }
+                        else {
+                            for (size_t i = 0; i < course.prerequisites.size(); i++) {
+                                cout << course.prerequisites[i];
+                                if (i < course.prerequisites.size() - 1) {
+                                    cout << ", ";
+                                }
+                            }
+                        }
+                        cout << endl;
+                    }
+                }
+            }
+            else if (choice == 9) {
+                cout << "Thank you!" << endl;
+            }
+            else {
+                cout << choice << " is not a valid option." << endl;
+            }
+        }
+
+        return 0;
+    }
