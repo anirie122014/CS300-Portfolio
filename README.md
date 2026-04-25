@@ -1,5 +1,5 @@
 # CS300-Portfolio
-In this course, I worked with different data structues. I worked with vectors, hash tales and binary search trees. I compared how they work and how fast they are. I wrote pseudocode for each one and chose the one that worked best for this project, which was the binary search tree. Then I used a binary search tree to build my program that loads course data and prints it in order. 
-I worked slow, understanding the data first, then writing code. Data structures matter because they change how fast and how organized everything runs.
-The hardest part for me has been debugging. It takes me a long time to figure out what is wrong with the code and how to fix it. Im Still working on it, especillay catching small mistakes when reading and storing data. 
-This project helped me slow down, and think through the codes more. 
+In this course, I worked with different data structures. I worked with vectors, hash tables, and binary search trees. I compared how they work and how fast they are. I wrote pseudocode for each one and chose the data structure that worked best for this project, which was the binary search tree. Then I used a binary search tree to build my program that loads course data and prints it in order. 
+I worked slowly, first understanding the data and then writing code. Data structures matter because they affect how fast and how organized everything runs.
+The hardest part for me has been debugging. It takes me a long time to figure out what is wrong with the code and how to fix it. I'm still working on improving this, especially when it comes to catching small mistakes while reading and storing data. After feedback, I improved the program by adding a full menu system and a course search feature in project two. 
+This project helped me slow down and think through the code more. 
